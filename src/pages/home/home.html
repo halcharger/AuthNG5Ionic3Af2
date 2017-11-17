@@ -1,13 +1,32 @@
 <ion-header>
-	<ion-navbar>
-		<ion-title>
-			Auth with Ionic
-		</ion-title>
-	</ion-navbar>
+  <ion-navbar>
+    <ion-title>
+      Auth with Ionic
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h1>Hello {{displayName}} ({{email}})</h1>
-	<button ion-button outline (click)="signInWithFacebook()">Login</button>  
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{user.photoUrl}}">
+      </ion-avatar>
+      <h2>Display Name</h2>
+      <h3>{{user.displayName}}</h3>
+    </ion-item>
+    <ion-item>
+      <h2>Email</h2>
+      <h3>{{user.email}}</h3>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <h2>UID</h2>
+    <h3>{{user.uid}}</h3>
+  </ion-item>
+  <ion-item>
+    <h2>Login Provider</h2>
+    <h3>{{user.loginProvider}}</h3>
+  </ion-item>
   <button ion-button outline (click)="signOut()">Logout</button>
 </ion-content>
